@@ -28,12 +28,12 @@ console.log(baseTicketPrice);
 
 // applichiamo uno sconto del 20% nel caso dovesse essere minorenne
 if (userAge < 18)  {
-    let finalTicketPrice = (baseTicketPrice - (underageDiscount * baseTicketPrice)) 
+    let finalTicketPrice = (baseTicketPrice - (underageDiscount * baseTicketPrice)).toFixed(2)
     console.log(finalTicketPrice) 
 } 
 
 // applichiamo uno sconto del 40% nel caso dovesse essere over 65
 else if (userAge > 65) {
-    let finalTicketPrice = (baseTicketPrice - (elderlyDiscount * baseTicketPrice))
+    let finalTicketPrice = (baseTicketPrice - (elderlyDiscount * baseTicketPrice)).toFixed(2)
     console.log(finalTicketPrice)
 }
