@@ -8,16 +8,15 @@
 
 
 // chiediamo all'utente la sua etá
-const userAge = prompt ('inserisci la tua etá')
-console.log(parseInt(userAge));
+const userAge = parseInt(prompt('inserisci la tua etá'))
+console.log("etá dell'utente: " + userAge);
 
 // chiediamo all'utente quanti km deve percorrere
-const userKmDistance = prompt ('Quanti Chilometri devi percorrere?')
-console.log(parseInt(userKmDistance));
+const userKmDistance = parseInt(prompt('Quanti Chilometri devi percorrere?'))
+console.log("Distanza in Km da percorrere: " + userKmDistance);
 
 // variabili necessarie per continuare il programma
-const kmDistance = 1;
-const flatKmTariff = (0.21 * kmDistance);
+const flatKmTariff = 0.21;
 const underageDiscount = (20 / 100);
 const elderlyDiscount = (40 / 100);
 
@@ -25,19 +24,19 @@ let discountTicketPrice;
 
 // check di quanto costerá il biglietto senza sconti
 let baseTicketPrice = ((userKmDistance * flatKmTariff)).toFixed(2);
-console.log(baseTicketPrice);
+console.log('Costo del biglietto: ' + baseTicketPrice + ' €');
 
 // applichiamo uno sconto del 20% nel caso dovesse essere minorenne
 if (userAge < 18)  {
     let discountTicketPrice = (baseTicketPrice - (underageDiscount * baseTicketPrice)).toFixed(2)
-    console.log(discountTicketPrice);
+    console.log("Costo del biglietto con sconto giovani applicato " + discountTicketPrice + ' €');
     alert('il tuo biglietto costerá: ' + discountTicketPrice + ' €')
 } 
 
 // applichiamo uno sconto del 40% nel caso dovesse essere over 65
 else if (userAge > 65) {
     let discountTicketPrice = (baseTicketPrice - (elderlyDiscount * baseTicketPrice)).toFixed(2)
-    console.log(discountTicketPrice)
+    console.log("Costo del biglietto con sconto anziani applicato " + discountTicketPrice + ' €')
     alert('il tuo biglietto costerá: ' + discountTicketPrice + ' €')
 }
 
